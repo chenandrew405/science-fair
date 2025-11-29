@@ -2,10 +2,8 @@ import os
 import pandas as pd
 import logging
 
-# Process files from pgp_downloads folder
-# Get project root (parent of data/ folder)
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_FOLDER = os.path.join(PROJECT_ROOT, "data", "pgp_downloads")
+PROJECT_ROOT = os.path.join("..", "data")
+DATA_FOLDER = os.path.join(PROJECT_ROOT, "pgp_downloads")
 
 logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
 

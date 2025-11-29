@@ -366,7 +366,7 @@ Examples:
     parser.add_argument(
         '--output-dir',
         type=Path,
-        default=Path('data/pgp_downloads'),
+        default=Path('../data/pgp_downloads'),
         help='Output directory (default: data/pgp_downloads)'
     )
     parser.add_argument(

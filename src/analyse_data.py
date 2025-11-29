@@ -8,14 +8,10 @@ from sklearn.metrics import mean_squared_error, r2_score
 import warnings
 warnings.filterwarnings('ignore')
 
-# --------------------------
-# Paths
-# --------------------------
-BASE_PATH = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(BASE_PATH)
+PROJECT_ROOT = os.path.join("..", "data")
 
 # Find all CSV files in processing_algorithm/ directory (where converted genome CSVs are)
-csv_files = [f for f in os.listdir(BASE_PATH) if f.endswith('.csv')]
+csv_files = [f for f in os.listdir(os.path.join(PROJECT_ROOT, "processing_algorithm")) if f.endswith('.csv')]
 if not csv_files:
     raise FileNotFoundError("[ERROR] No CSV files found in processing_algorithm/ directory")
 

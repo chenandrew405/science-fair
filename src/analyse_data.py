@@ -2,7 +2,6 @@ import os
 import pandas as pd
 import numpy as np
 import re
-import pickle
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import warnings
@@ -15,8 +14,8 @@ csv_files = [f for f in os.listdir(os.path.join(PROJECT_ROOT, "processing_algori
 if not csv_files:
     raise FileNotFoundError("[ERROR] No CSV files found in processing_algorithm/ directory")
 
-DATA_VISUALIZATION = os.path.join(PROJECT_ROOT, "data_visualization")
-DATA_EXTERNAL = os.path.join(PROJECT_ROOT, "data", "external")
+DATA_VISUALIZATION = os.path.join(PROJECT_ROOT, "visualization")
+DATA_EXTERNAL = os.path.join(PROJECT_ROOT, "external")
 
 EXTERNAL_FILES = {
     "clinvar": "clinicalVariants.tsv",
@@ -697,8 +696,11 @@ def main():
     if not os.path.exists(DATA_VISUALIZATION):
         os.makedirs(DATA_VISUALIZATION)
 
-    # Output file path
-    output_file = os.path.join(DATA_VISUALIZATION, "final_scores.csv")
+
+    # Output file path with timestamp
+    from datetime import datetime
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_file = os.path.join(DATA_VISUALIZATION, f"final_scores_{timestamp}.csv")
 
     # Check for already processed samples (resume capability)
     already_processed = set()
@@ -733,7 +735,7 @@ def main():
     samples_processed = 0
 
     for i, csv_file in enumerate(csv_files_to_process, 1):
-        user_file_path = os.path.join(BASE_PATH, csv_file)
+        user_file_path = os.path.join(os.path.join(PROJECT_ROOT, "processing_algorithm"), csv_file)
 
         try:
             results_df, sample_name = process_single_sample(

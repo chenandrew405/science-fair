@@ -2,6 +2,12 @@
 
 # Script to run analyse_data.py 10 times, logging output and error with timestamp
 
+# Activate the correct virtual environment (.venv as per repo guidelines)
+source ../.venv/bin/activate
+
+# Ensure required packages are installed
+pip install --quiet pandas numpy scikit-learn
+
 for i in {1..10}
 do
     timestamp=$(date +"%Y%m%d_%H%M%S")

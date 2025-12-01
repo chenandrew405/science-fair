@@ -1,19 +1,12 @@
 #!/bin/bash
 
-# Script to run analyse_data.py 10 times, logging output and error with timestamp
+# Script to generate aggregated disease and drug scores with averages
 
 # Activate the correct virtual environment (.venv as per repo guidelines)
 source ../.venv/bin/activate
 
-# Ensure required packages are installed
-pip install --quiet pandas numpy scikit-learn
+# Generate aggregated summary scores
+echo "[INFO] Generating aggregated scores from simplified data..."
+python3 aggregate_scores.py
 
-for i in {1..10}
-do
-    timestamp=$(date +"%Y%m%d_%H%M%S")
-    logfile="analyse_data_run_${timestamp}_$i.log"
-    echo "[INFO] Run $i - Logging to $logfile"
-    python3 analyse_data.py > "$logfile" 2>&1
-    sleep 1  # Ensure unique timestamps
-
-done
+echo "[INFO] Done! Aggregated scores available at ../data/results/aggregated_scores.csv"

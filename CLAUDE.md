@@ -20,11 +20,22 @@ deactivate
 
 ### Key Dependencies
 
-- pandas 2.3.3 - Data manipulation
-- numpy 2.3.4 - Numerical operations
-- scikit-learn 1.7.2 - Machine learning (RandomForestClassifier)
-- torch 2.9.1 - Deep learning (may be used for future extensions)
-- matplotlib 3.10.7 - Visualization
+-os
+-pandas
+-numpy
+-re
+-sklearn.ensemble.RandomForestRegressor
+-sklearn.metrics.mean_squared_error
+-sklearn.metrics.r2_score
+-warnings
+-logging
+-sys
+-time
+-argparse
+-fnmatch
+-signal
+-pathlib.Path
+-typing.Optional
 
 ## Running the Pipeline
 

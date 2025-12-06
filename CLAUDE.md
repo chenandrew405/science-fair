@@ -20,22 +20,22 @@ deactivate
 
 ### Key Dependencies
 
--os
--pandas
--numpy
--re
--sklearn.ensemble.RandomForestRegressor
--sklearn.metrics.mean_squared_error
--sklearn.metrics.r2_score
--warnings
--logging
--sys
--time
--argparse
--fnmatch
--signal
--pathlib.Path
--typing.Optional
+- os
+- pandas
+- numpy
+- re
+- sklearn.ensemble.RandomForestRegressor
+- sklearn.metrics.mean_squared_error
+- sklearn.metrics.r2_score
+- warnings
+- logging
+- sys
+- time
+- argparse
+- fnmatch
+- signal
+- pathlib.Path
+- typing.Optional
 
 ## Running the Pipeline
 

@@ -195,13 +195,6 @@ def compute_score(user_df, external_df, rsid_col="rsid", alleles_col="alleles"):
     """
     Compute weighted polygenic risk score (PRS) based on matched variants.
 
-    IMPROVEMENTS OVER OLD VERSION:
-    1. Matches actual GENOTYPES (not just rsid presence)
-    2. Weights variants by clinical significance
-    3. Incorporates direction of effect (risk-increasing vs protective)
-    4. Extracts odds ratios when available
-    5. Uses weighted sum formula instead of simple ratio
-
     Polygenic Risk Score Formula:
     PRS = Σ(weight_i × direction_i × OR_i) / N
 
@@ -216,15 +209,6 @@ def compute_score(user_df, external_df, rsid_col="rsid", alleles_col="alleles"):
     - Negative score = protective/decreased risk
     - Magnitude indicates strength of association
     - Normalized to roughly 0-1 scale for reporting
-
-    Args:
-        user_df: User genome dataframe with columns [rsid, genotype]
-        external_df: External database dataframe
-        rsid_col: Column name for rsid in external_df
-        alleles_col: Column name for alleles in external_df
-
-    Returns:
-        tuple: (score: float, matched_snps: int, details: dict)
     """
     # Handle empty external data
     if external_df.empty:

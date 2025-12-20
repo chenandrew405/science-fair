@@ -1,0 +1,7 @@
+disease_or_drug,avg_score,avg_matched_snps
+"Diabetes Mellitus, Type 2",0.334412,0.74216
+Lung Neoplasms,0.0,0.0
+Skin Neoplasms,0.0,0.0
+abacavir,0.0,0.0
+carbamazepine,0.654558,23.815331
+phenytoin,0.491731,3.324042

@@ -1,0 +1,7 @@
+Disease or Drug,Average Risk Score,Average Matched Single Nucleotide Polymorphisms,Median,Mode,Minimum,Maximum,Range,Quantile Normalization,Log Normalization,Min-Max Normalization,Skewness
+"Diabetes Mellitus, Type 2",0.334412,0.74216,0.334412,0.334412,0.334412,0.334412,0.0,0.334412,0.2884907453876656,0.51089743002148,0.0
+Lung Neoplasms,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Skin Neoplasms,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+abacavir,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+carbamazepine,0.654558,23.815331000000004,0.654558,0.654558,0.654558,0.654558,0.0,0.654558,0.5035339036732152,1.0,0.0
+phenytoin,0.491731,3.324042,0.491731,0.491731,0.491731,0.491731,0.0,0.491731,0.3999371906203225,0.7512412956529444,0.0
